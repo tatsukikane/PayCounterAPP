@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>のみカウンター</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Pay Counter</h1>
+  </div>
+
+  <div class="main">
+    <div class="input_area" id="input_area">
+      <h2>今日のメンバーを登録しよう&#127870;</h2>
+      <!-- <p class="explanation">名前の入力欄</p> -->
+      <div class="member_input">
+        <p>1: <input type="text" class="member_name" id="member_1"></p>
+        <p>2: <input type="text" class="member_name" id="member_2"></p>
+        <p>3: <input type="text" class="member_name" id="member_3"></p>
+        <p>4: <input type="text" class="member_name" id="member_4"></p>
+        <p>5: <input type="text" class="member_name" id="member_5"></p>
+        <p>6: <input type="text" class="member_name" id="member_6"></p>
+        <p>7: <input type="text" class="member_name" id="member_7"></p>
+      </div>
+      <button id="submit" class="submit">記憶を飛ばす&#128184;</button>
+    </div>
+
+    <div class="output_area" id="output_area">
+      <table class="table">
+        <tr>
+          <th>name</th><th>ranking</th><th>total</th><th>&#128176;</th><th>&#128180;</th>
+        </tr>
+        <tr><td id="member_out_1"></td><td class="ranking" id="ranking_1"></td><td class="total" id="total_1"></td>
+          <td><button class="itiman" id="itiman_1">10,000&#128176;</button></td><td><button class="sen" id="sen_1">1,000&#128180;</button></td>
+        </tr>
+        <tr><td id="member_out_2"></td><td class="ranking" id="ranking_2"></td><td class="total" id="total_2"></td>
+          <td><button class="itiman" id="itiman_2">10,000&#128176;</button></td><td><button class="sen" id="sen_2">1,000&#128180;</button></td>
+        </tr>
+        <tr><td id="member_out_3"></td><td class="ranking" id="ranking_3"></td><td class="total" id="total_3"></td>
+          <td><button class="itiman" id="itiman_3">10,000&#128176;</button></td><td><button class="sen" id="sen_3">1,000&#128180;</button></td>
+        </tr>
+        <tr><td id="member_out_4"></td><td class="ranking" id="ranking_4"></td><td class="total" id="total_4"></td>
+          <td><button class="itiman" id="itiman_4">10,000&#128176;</button></td><td><button class="sen" id="sen_4">1,000&#128180;</button></td>
+        </tr>
+        <tr><td id="member_out_5"></td><td class="ranking" id="ranking_5"></td><td class="total" id="total_5"></td>
+          <td><button class="itiman" id="itiman_5">10,000&#128176;</button></td><td><button class="sen" id="sen_5">1,000&#128180;</button></td>
+        </tr>
+        <tr><td id="member_out_6"></td><td class="ranking" id="ranking_6"></td><td class="total" id="total_6"></td>
+          <td><button class="itiman" id="itiman_6">10,000&#128176;</button></td><td><button class="sen" id="sen_6">1,000&#128180;</button></td>
+        </tr>
+        <tr><td id="member_out_7"></td><td class="ranking" id="ranking_7"></td><td class="total" id="total_7"></td>
+          <td><button class="itiman" id="itiman_7">10,000&#128176;</button></td><td><button class="sen" id="sen_7">1,000&#128180;</button></td>
+        </tr>
+
+      </table>
+
+      <!-- <p class="member_name_out" id="member_out_1"></p> -->
+      <!-- <p class="member_name_out" id="member_out_2"></p>
+      <p class="member_name_out" id="member_out_3"></p>
+      <p class="member_name_out" id="member_out_4"></p>
+      <p class="member_name_out" id="member_out_5"></p>
+      <p class="member_name_out" id="member_out_6"></p>
+      <p class="member_name_out" id="member_out_7"></p> -->
+    </div>
+  </div>
+
+  <div class="footer">
+
+  </div>
+
+
+
+
+
+
+
+
+
+<script>
+  let member_list = [];  //メンバー配列
+  let member_name = "";
+  let member_name_out = "";  //出力用変数
+  let total_list = [];  //各合計値配列
+
+
+  //合計値保存
+  let member_1_total = 0;
+  let member_2_total = 0;
+  let member_3_total = 0;
+  let member_4_total = 0;
+  let member_5_total = 0;
+  let member_6_total = 0;
+  let member_7_total = 0;
+
+
+  //メンバーの登録 member_listに配列で入ってる
+  $("#submit").on("click", function(){
+    for(let i=1;i<8;i++){
+      member_name = $("#member_" + i).val()
+      member_list.push(member_name);
+      // console.log(member_list[i-1]);
+      member_name_out = member_list[i-1]
+      $("#member_out_" + i).text(member_name_out);
+    }
+    $("#input_area").hide();
+    $("#output_area").show();
+  });
+
+//金額合計値計算
+  //1
+  $("#itiman_1").on("click", function(){
+    member_1_total += 10000;
+    $("#total_1").text(member_1_total);
+  });
+  $("#sen_1").on("click", function(){
+    member_1_total += 1000;
+    $("#total_1").text(member_1_total);
+  });
+  //2
+  $("#itiman_2").on("click", function(){
+    member_2_total += 10000;
+    $("#total_2").text(member_2_total);
+  });
+  $("#sen_2").on("click", function(){
+    member_2_total += 1000;
+    $("#total_2").text(member_2_total);
+  });
+  //3
+  $("#itiman_3").on("click", function(){
+    member_3_total += 10000;
+    $("#total_3").text(member_3_total);
+  });
+  $("#sen_3").on("click", function(){
+    member_3_total += 1000;
+    $("#total_3").text(member_3_total);
+  });
+  //4
+  $("#itiman_4").on("click", function(){
+    member_4_total += 10000;
+    $("#total_4").text(member_4_total);
+  });
+  $("#sen_4").on("click", function(){
+    member_4_total += 1000;
+    $("#total_4").text(member_4_total);
+  });
+  //5
+  $("#itiman_5").on("click", function(){
+    member_5_total += 10000;
+    $("#total_5").text(member_5_total);
+  });
+  $("#sen_5").on("click", function(){
+    member_5_total += 1000;
+    $("#total_5").text(member_5_total);
+  });
+  //6
+  $("#itiman_6").on("click", function(){
+    member_6_total += 10000;
+    $("#total_6").text(member_6_total);
+  });
+  $("#sen_6").on("click", function(){
+    member_6_total += 1000;
+    $("#total_6").text(member_6_total);
+  });
+  //7
+  $("#itiman_7").on("click", function(){
+    member_7_total += 10000;
+    $("#total_7").text(member_7_total);
+  });
+  $("#sen_7").on("click", function(){
+    member_7_total += 1000;
+    $("#total_7").text(member_7_total);
+  });
+
+
+</script>
+</body>
+</html>

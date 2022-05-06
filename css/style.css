@@ -1,0 +1,94 @@
+.header{
+  width: 100%;
+  text-align: center;
+  height: 150px;
+  background-image: url(../img/バナー.jpg);
+  background-size: cover;
+}
+.header h1{
+  font-size: 120px;
+  font-family: "Comic Sans MS";
+}
+
+.main {
+  background-image: url(../img/クラブ.jpg);
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 40px;
+}
+.main h2{
+  font-size: 40px;
+  text-align: center;
+  height: 80px;
+  padding-top: 30px;
+  color: white;
+  font-family: "Comic Sans MS";
+}
+.explanation {
+  font-size: 30px;
+}
+
+.member_input{
+  text-align: center;
+}
+.member_input p{
+  color: white;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+.member_input input{
+  width: 60%;
+  height: 60px;
+  font-size: 40px;
+}
+.input_area{
+  text-align: center;
+  height: 990px;
+}
+.input_area button{
+  height: 130px;
+  width: 260px;
+  font-size: 40px;
+  border-radius: 30px;
+  margin-top: 30px;
+  background-color: #8a2be2;
+  color: white;
+}
+
+/* アウトプットエリア */
+
+.output_area{
+  display: none;
+  height: 990px;
+}
+.output_area table{
+  color: white;
+}
+.table th{
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-size: 60px;
+  font-family: "Comic Sans MS";
+}
+.table td{
+  padding-bottom: 40px;
+  width: 190px;
+  height: 60px;
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Georgia';
+}
+.table button{
+  font-size: 40px;
+  width: 200px;
+  height: 60px;
+  border-radius: 30px;
+  margin-top: 20px;
+  font-family: 'Georgia';
+}
+
+.footer{
+  height: 70px;
+  background-image: url(../img/バナー.jpg);
+  background-size: cover;
+}
